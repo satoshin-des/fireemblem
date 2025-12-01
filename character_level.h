@@ -1,4 +1,6 @@
-#pragma once
+#ifndef CHARACTER_LEVEL_H
+#define CHARACTER_LEVEL_H
+
 #include <iostream>
 #include <vector>
 #include <random>
@@ -57,9 +59,11 @@ Character(StatusList& status, GrowthRate& growth)
 	/// <summary>
 	/// レベルアップする関数
 	/// </summary>
-	void LevelUp(int& pin, int& rand, std::vector<Character>& characters, const std::string& name, Button& button);
+	void LevelUp(int& pin, int& rand, std::vector<Character>& characters, const std::string& name/*, Button& button*/);
 
 	std::pair<int, int>  ChooseTwoDistinct();
 
 	void StatusOutput(std::vector<Character>& characters, const std::string& name);
 };
+
+#endif // CHARACTER_LEVEL_H

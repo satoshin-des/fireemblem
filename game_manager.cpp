@@ -1,27 +1,7 @@
 #include "game_manager.h"
 #include <vector>
 
-int GameManager:: Opening()
-{
-	return TITLE;
-
-	int time = 0;
-	Keyboard key_board;
-	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
-	{
-		key_board.GetKeyState();
-		DrawFormatString(0, 0, GetColor(PINK), "‚±‚ñ‚É‚¿‚Í");
-		key_board.SaveKeyState();
-		++time;
-		if (time == 600)
-		{
-			return TITLE;
-		}
-		FPS(60);
-	}
-	return 0;
-}
-
+#if 0
 int GameManager::Title()
 {
 	
@@ -114,13 +94,11 @@ int GameManager::Title()
 			return GAME_END;
 		}
 
-		/*
 		++time_count;
 		if (time_count >= 3600) //ˆê•ª•ú’u‚·‚é‚ÆOP‚É”ò‚Ô
 		{
 			return __OPENING__;
 		}
-		*/
 
 		key_board.SaveKeyState();
 
@@ -128,8 +106,9 @@ int GameManager::Title()
 	}
 	return 0;
 }
+#endif
 
-
+#if 0
 int GameManager::ModeSelect()
 {
 	Button start_button;				// ‚Í‚¶‚ß‚©‚ç
@@ -507,3 +486,4 @@ int GameManager::Scene2()
 	}
 	return 0;
 }
+#endif

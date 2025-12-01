@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAME_MANAGER_H
+#define GAME_MANEGER_H
 
 #include <iostream>
 #include <vector>
@@ -32,12 +33,6 @@ public:
 	}
 
 	/// <summary>
-	/// オープニング画面の描画
-	/// </summary>
-	/// <returns>状態</returns>
-	int Opening();
-
-	/// <summary>
 	/// タイトルを制御する関数
 	/// </summary>
 	/// <returns>状態</returns>
@@ -69,3 +64,5 @@ public:
 
 	Character playable_character;
 };
+
+#endif // GAME_MANAGER_H

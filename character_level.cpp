@@ -1,4 +1,6 @@
 #include "character_level.h"
+#include "game_manager.h"
+#include "key.h"
 
 int Character::GetRandomInt(int n1, int n2)
 {
@@ -22,11 +24,11 @@ std::pair<int, int> Character::ChooseTwoDistinct()
 	return { nums[0], nums[1] };
 }
 
-void Character::LevelUp(int& pin, int& rand, std::vector<Character>& characters, const std::string& name, Button& button)
+void Character::LevelUp(int& pin, int& rand, std::vector<Character>& characters, const std::string& name/*, Button& button*/ )
 {
 	if (CheckHitKey(KEY_INPUT_A) == 1)
 	{
-		if (button.pushed == true)
+		if (any_key_is_pressed)
 		{
 			characters[0].level_ += 1;
 			pin = 0;
@@ -66,7 +68,7 @@ void Character::LevelUp(int& pin, int& rand, std::vector<Character>& characters,
 			{
 				++pin;
 			}
-			button.pushed = false;
+			// button.pushed = false;
 			rand = GetRandomInt(1, 100);
 			if (pin >= 2)
 			{
@@ -166,7 +168,7 @@ void Character::LevelUp(int& pin, int& rand, std::vector<Character>& characters,
 	}
 	else
 	{
-		button.pushed = true;
+		// button.pushed = true;
 	}
 }
 
